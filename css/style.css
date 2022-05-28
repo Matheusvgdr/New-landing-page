@@ -1,5 +1,5 @@
 /*----------------- Reset ------------*/
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,131 +8,184 @@
 /*---------------- Fonts ----------------*/
 
 @font-face {
-    font-family: "Melodrama-Bold";
-    src: url(../fonts/Melodrama-Bold.woff);
-}
-@font-face {
-    font-family:"Melodrama-Regular" ;
+    font-family: "Melodrama-Regular";
     src: url(../fonts/Melodrama-Regular.woff);
 }
+
 @font-face {
-    font-family:"Melodrama-Light" ;
+    font-family: "Melodrama-Light";
     src: url(../fonts/Melodrama-Light.woff);
 }
+
 @font-face {
-    font-family: "Switzer-Bold";
-    src: url(../fonts/Switzer-Bold.woff);
-}
-@font-face {
-    font-family:"Switzer-Light";
+    font-family: "Switzer-Light";
     src: url(../fonts/Switzer-Light.woff);
 }
+
 @font-face {
-    font-family:"Switzer-Medium" ;
+    font-family: "Switzer-Medium";
     src: url(../fonts/Switzer-Medium.woff);
 }
-@font-face {
-    font-family:"Satoshi-Bold" ;
-    src: url(../fonts/Satoshi-Bold.woff);
-}
+
 @font-face {
     font-family: "Satoshi-Light";
     src: url(../fonts/Satoshi-Light.woff);
 }
+
 @font-face {
     font-family: "Satoshi-Regular";
     src: url(../fonts/Satoshi-Regular.woff);
 }
+
 @font-face {
-    font-family: "Satoshi-Medium";
-    src: url(../fonts/Satoshi-Medium.woff);
+    font-family: "BillionaireMediumGrunge";
+    src: url(../fonts/BillionaireMediumGrunge.woff);
+}
+
+@font-face {
+    font-family: "MADECannes.woff";
+    src: url(../fonts/MADECannes.woff);
+}
+
+@font-face {
+    font-family: "NixieOne.woff";
+    src: url(../fonts/NixieOne.woff);
+}
+
+@font-face {
+    font-family: "Riesling.woff";
+    src: url(../fonts/Riesling.woff);
+}
+
+@font-face {
+    font-family: "Typewriter_Condensed";
+    src: url(../fonts/Typewriter_Condensed.woff);
 }
 
 
 /*---------------- Variables --------------*/
-:root{
+:root {
 
     /** COLORS */
-        /* --background: #151417; */
-    --background: #08070b;
-    --color-name1: #64b3f4 ;
-    --color-name2: #c2e59c ;
+    /* --background: #151417; */
+    --blackSide: #020202;
+    --whiteSide: #ffffff;
+    --color-name2: #c2e59c;
     --color-subtitle: #f2f2f2;
-    
+
     /** FONTS */
-    --font-title: "Satoshi-Bold";
-    --font-subtitle: "Satoshi-Light";
-    --font-links: "Switzer-Light";
+    --font-title: "BillionaireMediumGrunge";
+    --font-subtitle: "BillionaireMediumGrunge";
+    --font-links: "Typewriter_Condensed";
 
-}
-
-body{
-    background: var(--background);
-    cursor: none;
-    height: 100vh;
-    width: 100vw;
-    display: flex;
 }
 
 /*---------------- Header -----------------*/
 
-.container{
-    position: absolute;
-    top: 45%;
-    left: 20%;
-    transform: translate(-20%, -45%);
+header {
+    cursor: none; 
+    display: flex;
+    height: 100vh;
 }
 
-h1{
-    /* background: linear-gradient(to right, rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234)); */
-    background-image: linear-gradient(60deg, var(--color-name1) 0%, var(--color-name2) 100%);
+.whiteSide {
+    position: fixed;
+    height: 100vh;
+    width: 50vw;
+    background: var(--whiteSide);
+    z-index: -2;
+   
+}
+
+.blackSide {
+    position: fixed;
+    left: 50%;
+    height: 100vh;
+    width: 50vw;
+    background: var(--blackSide);
+    z-index: -2;
+}
+
+#presentation{
+    margin: auto;
+    padding-left: 2rem;
+}
+
+h1 {
+    display: inline;
+    margin: 0px 45px 0px 0px;
     font-family: var(--font-title);
-    font-size: 4.4rem;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: .5s;
-    letter-spacing: 2px;
+    color: var(--blackSide);
+    font-size: 6.5rem;
+    position: relative;
 }
 
-h4{
-    color: var(--color-subtitle);
-    font-family: var(--font-subtitle);
-    letter-spacing: 2px;
+h2{
+    display: inline;
+    margin: 0px 50px 0px 0px;
+    font-family:var(--font-title);
+    color: var(--blackSide);
+    font-size: 50px;
+    position: relative;
+    left: 4.5rem;
 }
+
+.wLetter{
+    color:var(--whiteSide);
+}
+
+.bLetter{
+    color: var(--blackSide);
+}
+
+.socialMedia{
+    font-family: var(--font-links);
+    font-size: 1.3rem;
+    margin-top: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--blackSide);  
+}
+
+.socialMedia a{
+    position: relative;
+    padding: 0rem 3.2rem 0rem 0rem;
+    left: 17%;
+    text-decoration: none;
+}
+
+.bLetter:hover{
+    color: var(--blackSide);
+    cursor: none;
+}
+
+.wLetter:hover{
+    color: var(--whiteSide);
+    cursor: none;
+}
+
+.socialMedia:hover ~ .cursor{
+    transform: scale(3);
+
+}
+
+.job:hover ~.cursor{
+    transform: scale(3);
+}
+.myName:hover ~.cursor{
+    transform: scale(5);
+}
+
 
 /* ------------- Navigation ------------------*/
 
-ul{
-    display: flex;
-    position: absolute;
-    flex-direction: row;
-    left: 11%;
 
-    
-}
 
-ul li {
-    list-style: none;
-    margin-right: 50px;
-    margin-top: 30px;
-       
-}
+/*----------------ABOUT-----------------*/
 
-ul li a{
-    font-family: var(--font-links);
-    position: relative;
-    text-decoration: none;
-    color: var(--color-subtitle);
-    font-size: 1.2rem;
-    transition: .2s;
-    cursor: none;
-}
-ul:hover ~ .cursor{
-    transform: scale(3);
-   }
 
 /*---------- Mouse Effect -----------*/
-.cursor{
+.cursor {
     position: fixed;
     width: 20px;
     height: 20px;
@@ -142,15 +195,6 @@ ul:hover ~ .cursor{
     transform: translate(-50%, -50%);
     pointer-events: none;
     mix-blend-mode: difference;
-
 }
 
 /*------------- Images ------------*/
-
-header img{
-    position: absolute;
-    right: 0;
-    top: 15%;
-    width: 60%;
-    z-index: 2;
-}
